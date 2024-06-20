@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+    <p>{{ product.description }}</p>
+    <h2>Select Size:</h2>
+    <form action="{{ url_for('add_to_cart') }}" method="post">
+        {% for size in product.sizes %}
+        <input type="radio" id="{{ size }}" name="size" value="{{ size }}">
+        <label for="{{ size }}">{{ size }}</label>
+        {% endfor %}
+        <h2>Select Color:</h2>
+        {% for color in product.colors %}
+        <input type="radio" id="{{ color }}" name="color" value="{{ color }}">
+        <label for="{{ color }}">{{ color }}</label>
+        {% endfor %}
+        <input type="hidden" name="product_id" value="{{ product._id }}">
+        <input type="submit" value="Add to Cart">
+    </form>
+</body>
+</html>

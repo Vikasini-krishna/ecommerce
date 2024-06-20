@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation and Agreement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .confirmation-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .terms-list {
+            margin-top: 20px;
+        }
+
+        .terms-list li {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .accept-terms {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .accept-terms label {
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .confirm-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .confirm-button {
+            background-color: #ff4b4b;
+            color: white;
+        }
+
+        .confirm-button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <h2>Terms and Conditions</h2>
+
+        <ul class="terms-list">
+            <li>Use of the ecommerce website is subject to acceptance of these terms and conditions.</li>
+            <li>Product descriptions and pricing are subject to change without notice.</li>
+            <li>Orders require accurate information including shipping address and payment details.</li>
+            <li>Shipping times and costs vary based on selected options and destination.</li>
+            <li>Returns and exchanges are accepted within 30 days for unused, unworn items with tags attached.</li>
+            <li>All content on the website is protected by copyright laws.</li>
+            <li>Personal information is handled as per the Privacy Policy.</li>
+            <li>Liability for damages is limited to the extent permitted by law.</li>
+            <li>Disputes are subject to the exclusive jurisdiction of courts in [Your Jurisdiction].</li>
+            <li>Terms and conditions may be updated without prior notice.</li>
+        </ul>
+
+        <div class="accept-terms">
+            <input type="checkbox" id="accept-terms-checkbox">
+            <label for="accept-terms-checkbox">I have read and agree to the Terms and Conditions</label>
+        </div>
+
+        <div class="confirm-buttons">
+            <button class="confirm-button" onclick="confirmAgreement()">Confirm and Agree</button>
+        </div>
+    </div>
+
+    <script>
+        function confirmAgreement() {
+            if (document.getElementById('accept-terms-checkbox').checked) {
+                alert('Agreement confirmed! Redirecting...');
+                window.location.href = 'thank-you.html'; 
+            } else {
+                alert('Please accept the terms and conditions to proceed.');
+            }
+        }
+    </script>
+</body>
+</html>

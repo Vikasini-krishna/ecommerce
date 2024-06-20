@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | E-Commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: url('hero.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .hero .btn {
+            background-color: #ff5733;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .features {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .features .feature {
+            display: inline-block;
+            width: 30%;
+            margin: 1rem;
+        }
+
+        .newsletter {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .newsletter form {
+            display: inline-block;
+        }
+
+        .newsletter input {
+            padding: 0.5rem;
+            margin-right: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .newsletter .btn {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/payment">Payment</a></li>
+                <li><a href="/register">login</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Welcome to Our E-Commerce Site</h1>
+            <p>Discover amazing products and great deals!</p>
+            <a href="/products" class="btn">Shop Now</a>
+        </section>
+        <section class="features">
+            <h2>Why Shop With Us?</h2>
+            <div class="feature">
+                <h3>Wide Selection</h3>
+                <p>Choose from a wide range of products.</p>
+            </div>
+            <div class="feature">
+                <h3>Best Prices</h3>
+                <p>Get the best deals on the market.</p>
+            </div>
+            <div class="feature">
+                <h3>Fast Shipping</h3>
+                <p>Receive your order in no time.</p>
+            </div>
+        </section>
+        <section class="newsletter">
+            <h2>Stay Updated</h2>
+            <form id="newsletter-form" action="/subscribe" method="POST">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 E-Commerce Site. All rights reserved.</p>
+    </footer>
+</body>
+</html>

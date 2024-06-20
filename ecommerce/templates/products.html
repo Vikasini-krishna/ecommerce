@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .product {
+            display: flex;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .product img {
+            max-width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .product-info p {
+            margin: 5px 0;
+        }
+
+        .product-info .details-link {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .product-info .details-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products</h1>
+    <div class="products">
+        {% for product in products %}
+        <div class="product">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+            <div class="product-info">
+                <h2>{{ product.name }}</h2>
+                <p>Price: ${{ product.price }}</p>
+                <p>Description: {{ product.description }}</p>
+                <p>Sizes: {{ product.sizes|join(', ') }}</p>
+                <p>Colors: {{ product.colors|join(', ') }}</p>
+                <a href="{{ url_for('product_details', product_id=product._id) }}" class="details-link">View Details</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
